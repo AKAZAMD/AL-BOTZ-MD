@@ -1122,104 +1122,27 @@ break;
           case "sc": case "script": case "scbot":
            zareply("sc ini ga free ya beli wa.me/6283843362676");
           break
-default: {
 
-        if ([">", "eval", "=>"].some(a => m.command.toLowerCase().startsWith(a))) {
-
-          if (!isCreator) return m.reply(global.info.own)
-
-          let evalCmd = ""
-
-          try {
-
-            evalCmd = /await/i.test(m.res) ? eval("(async() => { " + m.res + " })()") : eval(m.res)
-
-          } catch (e) {
-
-            evalCmd = e
-
-          }
-
-          new Promise(async (resolve, reject) => {
-
-            try {
-
-              return resolve(evalCmd);
-
-            } catch (err) {
-
-              return reject(err)
-
-            }
-
-          })
-
-            ?.then((res) => m.reply(util.format(res)))
-
-            ?.catch((err) => m.reply(util.format(err)))
-
-        }
-
-
-
-        // exec
-
-        if (["$", "exec"].some(a => m.command.toLowerCase().startsWith(a))) {
-
-          if (!isCreator) return m.reply(global.info.own)
-
-          try {
-
-            exec(m.res, async (err, stdout) => {
-
-              if (err) return m.reply(util.format(err))
-
-              if (stdout) return m.reply(util.format(stdout))
-
-            })
-
-          } catch (e) {
-
-            await m.reply(util.format(e))
-
-          }
-
+          default: {
           if (isCmd2 && budy.toLowerCase() != undefined) {
-
             if (m.chat.endsWith("broadcast")) return;
-
             if (m.isBaileys) return;
-
             if (!budy.toLowerCase()) return;
-
             if (argsLog || (isCmd2 && !m.isGroup)) {
-
               // conn.sendReadReceipt(m.chat, m.sender, [m.key.id])
-
-              zareply(`${prefix}${command} tidak tersedia`);
-
+              console.log(chalk.magenta(chalk.bgRed("[ ERROR ]")), color("command", "turquoise"), color(`${prefix}${command}`, "turquoise"), color("tidak tersedia", "turquoise"));
             } else if (argsLog || (isCmd2 && m.isGroup)) {
-
               // conn.sendReadReceipt(m.chat, m.sender, [m.key.id])
-
-              zareply(`${prefix}${command} tidak tersedia`);
-
+              console.log(chalk.magenta(chalk.bgRed("[ ERROR ]")), color("command", "turquoise"), color(`${prefix}${command}`, "turquoise"), color("tidak tersedia", "turquoise"));
             }
-
           }
-
         }
-
       }
-
     }
-
+  } catch (err) {
+    m.reply(util.format(err));
   }
-
-}
-
-
-
+};
 
 
 let file = require.resolve(__filename);
