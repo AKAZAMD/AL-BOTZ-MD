@@ -979,7 +979,7 @@ let anu = groups.map(v => v.id)
 zareply(`Mengirim Broadcast Ke ${anu.length} Group Chat, Waktu Selesai ${anu.length * 0.5} detik`)
 for (let i of anu) {
 await sleep(100)
-conn.sendMessage(m.chat, { text: text }, { quoted: m }
+conn.sendMessage(i, { text: text }, { quoted: m })
     }
 zareply(`Sukses Mengirim Broadcast Ke ${anu.length} Group`)
 }
