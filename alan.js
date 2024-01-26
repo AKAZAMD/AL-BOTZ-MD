@@ -979,7 +979,7 @@ let anu = groups.map(v => v.id)
 zareply(`Mengirim Broadcast Ke ${anu.length} Group Chat, Waktu Selesai ${anu.length * 0.5} detik`)
 for (let i of anu) {
 await sleep(100)
-conn.sendMessage(m.chat, { text: text }, { quoted: m })
+conn.sendMessage(m.chat, { text: text }, { quoted: m }
     }
 zareply(`Sukses Mengirim Broadcast Ke ${anu.length} Group`)
 }
@@ -1122,8 +1122,7 @@ break;
           case "sc": case "script": case "scbot":
            zareply("sc ini ga free ya beli wa.me/6283843362676");
           break
-
-          default: {
+default: {
           if (isCmd2 && budy.toLowerCase() != undefined) {
             if (m.chat.endsWith("broadcast")) return;
             if (m.isBaileys) return;
@@ -1143,7 +1142,6 @@ break;
     m.reply(util.format(err));
   }
 };
-
 
 let file = require.resolve(__filename);
 
