@@ -22,6 +22,11 @@ global.ALmdjpg = [
     'https://telegra.ph/file/29cae013f55fdbc7f7123.jpg',
     'https://telegra.ph/file/6877f86f35d68bd8c10a4.jpg'
 ]
+global.info = {
+  reg: 'Maaf anda belum terdaftar di database mohon daftar terlebih dahulu \n ketik .daftar untuk mendaftar',
+  prem: 'Maaf fitur ini khusus untuk pengguna premium\nbeli premium di https://wa.me/6283843362676',
+  own: 'Maaf fitur ini khusus untuk Owner \n beli Owner di https://wa.me/6283843362676'
+};
 
 global.openai = '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'  //api key bisa didapatkan dari https://platform.openai.com/api-keys
 wagc = 'https://chat.whatsapp.com/LcHcJf4VwTcCDn0OandM6w'
@@ -29,7 +34,7 @@ sgc = 'https://chat.whatsapp.com/LcHcJf4VwTcCDn0OandM6w'
 global.botname = 'ALMD'
 global.author = 'Alan Dika Saputra'
 global.packname = "By AL Botz MD"
-global.wm = "AL STORE
+global.wm = "AL STORE"
 global.psaweria = 'https://saweria.co/Akazamd'
 global.autoTyping = true 
 let file = require.resolve(__filename)
